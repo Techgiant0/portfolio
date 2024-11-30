@@ -100,12 +100,14 @@ nav{
 @media(width <= 768px){
     .menu{
         display: flex;
+        justify-content: center;
         position: fixed;
         left: -150%;
         top: 5rem;
+        transform: translate(20%, 50%);
         gap: 0;
         flex-direction: column;
-        width: 100%;
+        width: 80%;
         text-align: center;
         transition: 0.3s;
         background: rgba(255, 255, 255, 0.2);
@@ -185,4 +187,24 @@ nav{
       .menu-hamburger.active .line3 {
         transform: translateY(-9px) rotate(-45deg);
       }
+
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 0px;
+        box-shadow: 0 4px 30px rgba(12, 185, 12, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
 }
