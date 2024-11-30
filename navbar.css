@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    position: fixed;
+    top: 2rem;
+    width: 80%;
+    z-index: 1000;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(12, 185, 12, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* General Styling for Navigation Items */
+.menu li {
+    position: relative; /* Ensures the pseudo-element is positioned relative to the text */
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s; /* Optional: smooth color transition on hover */
+}
+
+/* Pseudo-element for Underline */
+.menu li::after {
+    content: ""; /* Required to create the pseudo-element */
+    position: absolute;
+    bottom: 0; /* Positions underline at the bottom of the text */
+    left: 20%;
+    width: 0; /* Start with no width */
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(12, 185, 12); /* Color of the underline */
+    transition: width 0.3s ease-in-out; /* Smooth animation for the underline */
+}
+
+/* Hover Effect */
+.menu li:hover::after {
+    width: 60%; /* Full width underline on hover */
+}
+
+.menu li:hover {
+    color: rgb(12, 185, 12);
+}
+
+.logo{
+    font-size: 160%;
+}
+
+.logo > a{
+    text-decoration: none;
+    color: white;
+}
+
+.green{
+    color: rgb(12, 185, 12);
+}
+
+.contact{
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(12, 185, 12);
+    border: rgb(12, 185, 12) solid 1px;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 5px 5px 7px rgba(12, 185, 12, 0.2);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.contact:hover{
+    background-color: rgb(12, 185, 12);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(12, 185, 12,0.24),0 17px 50px 0 rgba(12, 185, 12,0.19);
+}
+
+@media(width <= 768px){
+    .menu{
+        display: flex;
+        position: fixed;
+        left: -150%;
+        top: 5rem;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(12, 185, 12, 0.2);
+        backdrop-filter: blur(6.2px);
+        -webkit-backdrop-filter: blur(6.2px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact{
+        width: 80%;
+    }
+    
+    .menu-link{
+        margin: 16px 0;
+    }
+
+    .menu.active{
+        left: 0;
+    }
+
+    .menu-hamburger {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+        padding: 10px;
+      }
+      
+      .hamburger {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      
+      .line {
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: white;
+        transition: all 0.3s ease;
+      }
+      
+      .line1 {
+        top: 0;
+      }
+      
+      .line2 {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      .line3 {
+        bottom: 0;
+      }
+      
+      /* Animation classes */
+      .menu-hamburger:hover .line {
+        background: whitesmoke;
+      }
+      
+      .menu-hamburger.active .line1 {
+        transform: translateY(9px) rotate(45deg);
+      }
+      
+      .menu-hamburger.active .line2 {
+        opacity: 0;
+      }
+      
+      .menu-hamburger.active .line3 {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+}
