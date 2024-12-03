@@ -52,30 +52,30 @@ nav{
 
 /* General Styling for Navigation Items */
 .menu li {
-    position: relative; /* Ensures the pseudo-element is positioned relative to the text */
+    position: relative;
     display: inline-block;
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     color: white;
     cursor: pointer;
-    transition: color 0.3s; /* Optional: smooth color transition on hover */
+    transition: color 0.3s;
 }
 
 /* Pseudo-element for Underline */
 .menu li::after {
-    content: ""; /* Required to create the pseudo-element */
+    content: ""; 
     position: absolute;
-    bottom: 0; /* Positions underline at the bottom of the text */
+    bottom: 0;
     left: 20%;
-    width: 0; /* Start with no width */
-    height: 2px; /* Thickness of the underline */
-    background-color: rgb(12, 185, 12); /* Color of the underline */
-    transition: width 0.3s ease-in-out; /* Smooth animation for the underline */
+    width: 0; 
+    height: 2px; 
+    background-color: rgb(12, 185, 12); 
+    transition: width 0.3s ease-in-out; 
 }
 
-/* Hover Effect */
+
 .menu li:hover::after {
-    width: 60%; /* Full width underline on hover */
+    width: 60%; 
 }
 
 .menu li:hover {
@@ -173,33 +173,33 @@ nav{
         transition: all 0.3s ease;
       }
       
-      .line1 {
+      .line:nth-child(1) {
         top: 0;
       }
       
-      .line2 {
+      .line:nth-child(2) {
         top: 50%;
         transform: translateY(-50%);
       }
       
-      .line3 {
+      .line:nth-child(3) {
         bottom: 0;
       }
       
-      /* Animation classes */
+     
       .menu-hamburger:hover .line {
         background: whitesmoke;
       }
       
-      .menu-hamburger.active .line1 {
+      .menu-hamburger.active .line:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
       }
       
-      .menu-hamburger.active .line2 {
+      .menu-hamburger.active .line:nth-child(2) {
         opacity: 0;
       }
       
-      .menu-hamburger.active .line3 {
+      .menu-hamburger.active .line:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
       }
 
